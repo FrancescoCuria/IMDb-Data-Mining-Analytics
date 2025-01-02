@@ -1,0 +1,52 @@
+1. rating
+Mean: 7.16, with a max of 10.0 and a min of 1.0.
+Distribution: Most movies seem to have a rating between 6.0 (25th percentile) and 8.0 (75th percentile). The median is 7.0, indicating generally favorable ratings.
+Interesting note: Few movies have extremely low ratings (close to 1.0).
+2. startYear
+Mean: 1991, with a min of 1878 and a max of 2024.
+Distribution: Most movies were made between 1978 (25th percentile) and 2013 (75th percentile).
+Interesting note: There are records for movies as early as the 19th century and even for future years (2024).
+3. runtimeMinutes
+Mean: 60.57 minutes, with a max of 3000 minutes and a min of 0.
+Distribution: The median is 59 minutes, and most values lie between 40 and 80 minutes.
+Interesting note: There are some extremely long movies, but a significant portion has 0 runtime, which could mean missing data or placeholders.
+4. awardWins
+Mean: 0.41, with a max of 145 awards and a min of 0.
+Distribution: Most movies do not have awards (25th, 50th, and 75th percentiles are all 0).
+Interesting note: A few movies have received a very high number of awards, creating a long tail.
+5. numVotes
+Mean: 1,492 votes, with a max of 966,565 votes.
+Distribution: The median is 36 votes, showing that many movies receive limited attention, while a few are extremely popular.
+Interesting note: The wide range suggests the presence of blockbuster movies with massive vote counts.
+6. totalImages
+Mean: 11.48, with a max of 3,504 images.
+Distribution: Most movies have very few images, as indicated by the 25th percentile of 1.
+Interesting note: The dataset contains a few movies with a surprisingly large number of images.
+7. totalVideos
+Mean: 0.27, with a max of 258 videos.
+Distribution: Most movies have no videos (25th, 50th, and 75th percentiles are all 0).
+Interesting note: The majority of entries lack video content, but some have a significant number of videos.
+8. totalCredits
+Mean: 61.34, with a max of 15,742 credits.
+Distribution: The median is 34 credits, indicating that most movies have manageable cast and crew sizes.
+Interesting note: There are outliers with exceptionally high credit counts, likely large-scale productions.
+9. criticReviewsTotal
+Mean: 2.79, with a max of 533 reviews.
+Distribution: Most movies have very few critic reviews (median is 0).
+Interesting note: There are outliers with a very high number of critic reviews, reflecting high-profile releases.
+10. awardNominationsExcludeWins
+Mean: 0.56, with a max of 197 nominations.
+Distribution: Most movies have no nominations (25th, 50th, and 75th percentiles are all 0).
+Interesting note: The dataset includes movies with a significant number of nominations but likely fewer wins.
+11. numRegions
+Mean: 3.55, with a max of 69.
+Distribution: Most movies have been released in just 1 to 3 regions.
+Interesting note: Some movies have an unusually wide international release.
+12. userReviewsTotal
+Mean: 7.23, with a max of 5,727 reviews.
+Distribution: The median is 2 reviews, indicating most movies are lightly reviewed by users.
+Interesting note: A few movies have exceptionally high user review counts, suggesting popularity.
+13. ratingCount
+Mean: 1,492, similar to numVotes, with a max of 967,042.
+Distribution: Like numVotes, the median is 36, highlighting most movies have limited engagement.
+Interesting note: Some blockbuster movies stand out with incredibly high ratings.

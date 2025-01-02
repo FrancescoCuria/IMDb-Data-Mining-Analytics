@@ -1,0 +1,122 @@
+1) Objective
+correlation genre - ratings
+
+2) Understanding
+2.1) Attributes TODO:ADD NULL/NON-NULL
+- originalTitle: 		
+Original title, in the original language.
+Nominal
+Non-Null
+- runtimeMinutes: 		
+Primary runtime of the title, in minutes.
+Ratio
+Non-Null
+- isAdult:		
+Whether or not the title is for adult. 0: non-adult title; 1: adult title.
+Binary
+- startYear: 			
+Represents the release year of a title. In the case of TV Series, it is the series start year.
+Ordinal
+- endYear:
+TV Series end year.
+Numeric
+- numVotes:
+Number of votes the title has received.
+Numeric
+- numRegions:
+The regions number for this version of the title.
+Nominal
+- worstRating: 
+Worst title rating.
+Ordinal
+- bestRating:
+Best title rating.
+Ordinal
+- canHaveEpisodes:
+Whether or not the title can have episodes.
+Binary
+- isRatable:
+Whether or not the title can be rated by users.
+Binary
+- totalImages:
+Total Number of Images for the title within the IMDb title page.
+Numeric
+- totalVideos: 
+Total Number of Videos for the title within the IMDb title page.
+Numeric
+- totalCredits:
+Total Number of Credits for the title.
+Numeric
+- criticReviewsTotal:
+Total Number of Critic Reviews.
+Numeric
+- awardWins:
+Number of awards the title won.
+Numeric
+- awardNominationsExcludeWins:
+Number of award nominations excluding wins.
+Numeric
+- titleType:
+The type/format of the title (e.g. movie, short, tvseries, tvepisode, video, etc).
+Categorical
+- rating:
+IMDB title rating class.
+Numeric
+- ratingCount: 
+The total number of user ratings submitted for the title.
+Ratio
+- countryOfOrigin: 
+The country where the title was primarily produced.
+Categorical
+- genres: 
+The genre(s) associated with the title (e.g., drama, comedy, action).
+Categorical
+- userReviewsTotal:
+Total Number of Users Reviews.
+Ratio
+
+2.2) Attribute cleaning
+
+- removing duplicates:
+duplicate rows are removed 
+LINK:   duplicated/duplicated_rows.xlsx
+NBLINK: (0), (1)
+
+- rating:
+formatted as an (x, x+1] string
+modified as x+1 integer
+NBLINK: (2)
+
+- rating count ambiguity:
+the following data seems ambiguous:
+    numVotes: Number of votes the title has received.
+    criticReviewsTotal: Total Number of Critic Reviews.
+    ratingCount: The total number of user ratings submitted for the title.
+    userReviewsTotal: Total Number of Users Reviews.
+1 - no correlation between (userReviewsTotal, criticReviewsTotal) and (ratingCount, numVotes)
+TODO(?) show no correlation
+2 - numVotes and ratingCount are very similar:
+but it's intresting to notice that there are outliers
+the mean of the difference between the two fields is 0.75, but
+the higher value is 318
+NBLINK: (3)
+a plot of the distribution of these (possibly) outliers
+LINK:   difference_between_numVotes_ratingCount_dirt.png
+NBLINK: (4)
+to answer the question if these values are outliers or to be fixed
+lets see how many of them are over 10 entries
+LINK:   high_difference_numVotes_ratingCount.xlsx
+NBLINK: (5)
+so lets check the magnitudo of the difference with respect of the
+two values from which it originates
+to check te magnitudo let's take the difference and divide it by
+the mean between numVotes and ratingCount
+this requires the mean to be non zero, hence entries having
+bot numVotes and ratingCount as zero are dropped
+(if the entries had zero, it would clearly be a wrong data)
+NBLINK: (7)
+and then compute the magnitudo
+we can clearly see the maximum magnitudo being 0.1538
+which means the difference is not in the same order of magnitude
+as the values that generates it
+NBLINK: (6)
