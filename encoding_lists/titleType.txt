@@ -1,9 +1,9 @@
-movie,0
-short,1
-tvEpisode,2
-tvMiniSeries,3
-tvMovie,4
-tvSeries,5
-tvShort,6
-tvSpecial,7
-video,8
+tvSeries: 0
+movie: 1
+tvEpisode: 2
+tvMovie: 3
+tvSpecial: 4
+tvMiniSeries: 5
+tvShort: 6
+video: 7
+short: 8
