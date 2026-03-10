@@ -1,4 +1,4 @@
-# IMDb Data Mining Analytics
+# IMDb Data Mining & Analytics
 
 ## Overview
 This repository contains a comprehensive Data Mining pipeline based on a subset of the **IMDb database** (approx. 22,000 records). The project focuses on core Data Engineering tasks, including data cleansing, transformation, unsupervised segmentation, and pattern extraction to discover hidden associations between media attributes.  
@@ -30,6 +30,7 @@ Segmented the IMDb titles based on structural similarities using various algorit
 * **Data Processing & Transformation**: Pandas, NumPy
 * **Machine Learning**: Scikit-Learn
 * **Data Visualization**: Matplotlib, Seaborn
+
 
 
 
