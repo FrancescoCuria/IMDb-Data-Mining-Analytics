@@ -1,7 +1,7 @@
 # IMDb Data Mining & Analytics
 
 ## Overview
-This repository contains a comprehensive Data Mining pipeline based on a subset of the **IMDb database** (approx. 22,000 records). The project focuses on core Data Preparation tasks, including data cleansing, transformation, unsupervised segmentation, and Pattern Extraction to discover hidden associations between media attributes.  
+This repository contains a comprehensive Data Mining pipeline applied to a subset of the IMDb database (~22,000 records, 23 initial features). The project covers the full machine learning lifecycle, from rigorous data preprocessing and outlier handling to unsupervised segmentation (clustering), predictive modeling (classification/regression), and frequent pattern extraction.
 **[Read the full Project Report (PDF)](IMDbProjectReport.pdf)**
 
 ## Project Workflow & Architecture
@@ -13,17 +13,21 @@ This repository contains a comprehensive Data Mining pipeline based on a subset 
 
 ### 2. Unsupervised Learning (Clustering)
 Segmented the IMDb titles based on structural similarities using various algorithms:
-* K-Means & Bisecting K-Mean
+* K-Means & Bisecting K-Means: Identified the optimal segmentation at $k=5$ by performing feature selection.
+* Hierarchical Clustering: Validated cluster compactness using Ward and Single Linkage dendrograms.
 * DBSCAN (Density-based spatial clustering)
-* Hierarchical Clustering
 
 ### 3. Predictive Modeling (Classification & Regression)
-* Built supervised models (KNN, Naive Bayes Classifier and Decision Trees for Binary/Multiclass Classification) to categorize titles into target classes.
-* Developed Multivariate Regression models to predict continuous variables such as rating counts.
+* Binary & Multiclass Classification: Trained K-NN, Naive Bayes, and Decision Trees.
+  * Achieved F1: 0.92 and ROC-AUC: 0.96 on the isMovie binary task using an optimized Decision Tree.
+  * Reached a weighted F1: 0.84 on the titleType multiclass prediction via Grid-Searched Decision Trees (Gini impurity, max depth: 10).
+* Regression Analysis: Modeled user engagement (userReviewsTotal) using Linear, Ridge, Lasso, Decision Tree, and K-NN Regressors.
+The best performance was achieved using a Multiple Regression approach with a K-NN Regressor ($k=20$), reaching an $R^2$ of 0.620.
 
 ### 4. Pattern & Association Rule Mining
-* Extracted **Frequent Itemsets** to discover common combinations of features (e.g., genre pairings by country).
-* Generated **Association Rules** to mathematically describe relationships and predict target variables based on hidden dataset patterns.
+* Discretization: Binned continuous variables into categorical ranges (e.g., SLength, HRated) to enable effective pattern discovery.
+* Frequent Itemsets: Deployed Apriori and FP-Growth algorithms. Identified 73 frequent itemsets using a 0.10 support threshold.
+* Association Rules: Extracted 19 highly confident rules (Confidence $\geq$ 0.6). Discovered strong, semantically meaningful associations, such as predicting high ratings (HRated) from short TV episodes (SLength, tvEpisode) with a Lift of 1.59.
 
 ## Tech Stack
 * **Language**: Python
