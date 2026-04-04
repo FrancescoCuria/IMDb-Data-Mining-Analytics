@@ -32,7 +32,7 @@ The best performance was achieved using a Multiple Regression approach with a K-
 ## Tech Stack
 * **Language**: Python
 * **Data Processing & Transformation**: Pandas, NumPy
-* **Machine Learning**: Scikit-Learn
+* **Machine Learning**: Scikit-Learn, Mlxtend
 * **Data Visualization**: Matplotlib, Seaborn
 
 
